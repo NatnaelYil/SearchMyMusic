@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <style>
+      body {
+        margin-top: 20px;
+      
+        
+      }
+      .artist {
+        background-color: #eeeeee;
+        border: 1px solid #dddddd;
+        border-radius: 25px;
+        cursor: pointer;
+        min-height: 50px;
+        padding: 10px;
+      }
+      .artist img {
+        max-width: 200px;
+      }
+      .album-list {
+        padding-left: 10px;
+        max-width: 1000;
+        
+      }
+      .album,
+      .track {
+        cursor: pointer;
+        list-style: none;
+        padding-left: 10px;
+      }
+      .album:hover,
+      .track:hover {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" >
+      <form id="artist-search" >
+        <fieldset>
+          <legend><Strong>Welcome to SearchMyMusic</Strong></legend>
+
+          <input type="hidden" name="type" value="artist" />
+
+          <div class="form-group">
+            <label for="artist">Artist name</label>
+            <input id="n" type="text" class="form-control" name="query" placeholder="Type your artist's name..." />
+          </div>
+
+          <button type="submit" onclass="btn btn-default">Search</button>
+        </fieldset>
+      </form>
+
+      <div id="artist-list"  style="float: left;" placeholder="Type your artist's name..."  >
+      </div>
+      <div contentEditable=false data-ph="Select your artist from the list that will be  displayed below,you can also select another artist to view the detail without going back..."></div>
+      
+    </div>
+
+    <div id="track-list" class="modal">al
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="script1.js"></script>
+    <style>
+      [contentEditable=false]:empty:not(:focus):before{
+        content:attr(data-ph)
+      }
+    </style>
+  </body>
+</html>
